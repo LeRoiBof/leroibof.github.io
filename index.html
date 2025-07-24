@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Junior Full-Stack Developer</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -287,6 +289,23 @@
             letter-spacing: 0.5px;
         }
 
+        /* === PROFILE PICTURE === */
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-primary);
+            object-fit: contain;
+            background: var(--bg-card);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(100, 255, 218, 0.5);
+        }
+
         /* === SKILLS HEXAGONS === */
         .skill-hexagon {
             width: 100px;
@@ -332,6 +351,105 @@
         }
 
         /* === BUTTONS === */
+        /* Hero buttons - keep original color on hover */
+        .btn-hero {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero:hover {
+            color: var(--accent-primary);
+            box-shadow: 0 0 20px var(--accent-primary);
+        }
+
+        .btn-hero.secondary {
+            border-color: var(--accent-secondary);
+            color: var(--accent-secondary);
+        }
+
+        .btn-hero.secondary:hover {
+            color: var(--accent-secondary);
+            box-shadow: 0 0 20px var(--accent-secondary);
+        }
+
+        /* Contact buttons - keep original color on hover */
+        .btn-contact {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-contact:hover {
+            color: var(--accent-primary);
+            box-shadow: 0 0 20px var(--accent-primary);
+        }
+
+        .btn-contact.secondary {
+            border-color: var(--accent-secondary);
+            color: var(--accent-secondary);
+        }
+
+        .btn-contact.secondary:hover {
+            color: var(--accent-secondary);
+            box-shadow: 0 0 20px var(--accent-secondary);
+        }
+
+        .btn-contact.tertiary {
+            border-color: var(--accent-tertiary);
+            color: var(--accent-tertiary);
+        }
+
+        .btn-contact.tertiary:hover {
+            color: var(--accent-tertiary);
+            box-shadow: 0 0 20px var(--accent-tertiary);
+        }
+
+        /* Button spacing */
+        .buttons .btn-hero {
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .buttons .btn-hero:last-child {
+            margin-right: 0;
+        }
+
+        .buttons .btn-contact {
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .buttons .btn-contact:last-child {
+            margin-right: 0;
+        }
+
+        .buttons.is-centered .btn-contact {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Card buttons - with color change effect */
         .btn-neon {
             background: transparent;
             border: 2px solid var(--accent-primary);
@@ -361,7 +479,6 @@
         }
 
         .btn-neon:hover {
-            color: var(--bg-primary);
             box-shadow: 0 0 20px var(--accent-primary);
         }
 
@@ -392,6 +509,7 @@
         }
 
         .btn-neon.tertiary:hover {
+            color: #000000;
             box-shadow: 0 0 20px var(--accent-tertiary);
         }
 
@@ -548,6 +666,9 @@
                     <!-- Introduction -->
                     <div class="column is-6">
                         <div class="code-block">
+                            <div class="has-text-centered mb-5">
+                                <img src="picture.jpg" alt="Maxime Dupuis" class="profile-picture">
+                            </div>
                             <h1 class="title is-1 glitch" data-text="Maxime Dupuis">
                                 Maxime Dupuis
                             </h1>
@@ -560,10 +681,10 @@
                                 automate routine tasks to boost productivity.
                             </p>
                             <div class="buttons">
-                                <a href="#projets" class="btn-neon">
+                                <a href="#projets" class="btn-hero">
                                     <i class="fas fa-terminal mr-2"></i>View Projects
                                 </a>
-                                <a href="#contact" class="btn-neon secondary">
+                                <a href="#contact" class="btn-hero secondary">
                                     <i class="fas fa-envelope mr-2"></i>Contact
                                 </a>
                             </div>
@@ -958,13 +1079,13 @@
                         </div>
                         
                         <div class="buttons is-centered mt-5">
-                            <a href="mailto:maxime.dupuis@student.umons.ac.be" class="btn-neon">
+                            <a href="mailto:maxime.dupuis@student.umons.ac.be" class="btn-contact">
                                 <i class="fas fa-envelope mr-2"></i>Email
                             </a>
-                            <a href="https://www.linkedin.com/in/maxime-dupuis-5390592b4/" class="btn-neon secondary" target="_blank">
+                            <a href="https://www.linkedin.com/in/maxime-dupuis-5390592b4/" class="btn-contact secondary" target="_blank">
                                 <i class="fab fa-linkedin mr-2"></i>LinkedIn
                             </a>
-                            <a href="https://github.com/LeRoiBof" class="btn-neon tertiary" target="_blank">
+                            <a href="https://github.com/LeRoiBof" class="btn-contact tertiary" target="_blank">
                                 <i class="fab fa-github mr-2"></i>GitHub
                             </a>
                         </div>
